@@ -50,3 +50,27 @@ y = ((m[0] * 3000) + (m[1] * 3) + (m[2] * 40)) + b
 y1 = ((m[0] * 2500) + (m[1] * 4) + (m[2] * 5)) + b
 print(y)
 print(y1)
+
+plt.figure(figsize = (16, 12))
+
+plt.subplot(2, 2, 1)
+plt.xlabel("Area in sq.fts")
+plt.ylabel("Price in Rs")
+plt.title("Area vs Price")
+plt.plot(df.area, df.price, marker='*')
+
+plt.subplot(2, 2, 2)
+plt.xlabel("bedrooms in numbers")
+plt.ylabel("Price in Rs")
+plt.title("bedrooms vs Price")
+plt.plot(df.bedrooms, df.price, marker='+')
+
+plt.subplot(2, 2, 3)
+plt.xlabel("age in numbers")
+plt.ylabel("Price in Rs")
+plt.title("age vs Price")
+plt.plot(df.age, df.price, marker='D')
+
+plt.savefig("D:\\Python\\Programs\\Images\\Linear_Reg_2.png")
+plt.show()
+
