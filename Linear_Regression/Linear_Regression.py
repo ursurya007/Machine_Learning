@@ -1,3 +1,8 @@
+print("Linear Regression with Single Variables: y=mx+b")
+print("Dependent Variable or Price: y")
+print("Independent Variables or Features: x")
+print("Slope or Gradient or Co-efficient: m")
+print("Y- Intercept: b")
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
