@@ -12,10 +12,10 @@ df = pd.read_csv("D:\\Python\\Programs\\Csv_Files\\Area_Price_2.csv") #Maintain 
 print(type(df))
 print(df)
 
-plt.scatter(df.area, df.price, color='red', marker='+')
-plt.xlabel("Area in Sq.ft")
-plt.ylabel("Cost in Rs")
-plt.show()
+# plt.scatter(df.area, df.price, color='red', marker='+')
+# plt.xlabel("Area in Sq.ft")
+# plt.ylabel("Cost in Rs")
+# plt.show()
 
 new_df = df.drop('price', axis='columns') #Getting Areas data in the new dataframe
 price = df.price
@@ -65,3 +65,18 @@ print(temp)
 d['prices'] = temp
 print(d['prices'])
 d.to_csv('D:\\Python\\Programs\\Csv_Files\\Prediction.csv', index=False) #storing Prediction values
+
+import pickle
+with open('model_pickle', 'wb') as f:
+    pickle.dump(reg, f)
+
+with open('model_pickle', 'rb') as f:
+    mp = pickle.load(f)
+
+print(mp.predict([[7200]]))
+
+import joblib
+joblib.dump(reg, 'model_joblib')
+mj = joblib.load('model_joblib')
+
+print(mj.predict([[8000]]))
